@@ -9,33 +9,32 @@ import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up
 import { auth } from './firebase/firebase.utils'
 
 class App extends React.Component {
-  constructor(props){
-    super(props)
+  constructor() {
+    super();
 
-    this.state = { 
+    this.state = {
       currentUser: null
-    }
+    };
   }
 
-  unsubscribeFromAuth = null
+  unsubscribeFromAuth = null;
 
-  componentDudMount() {
+  componentDidMount() {
     this.unsubscribeFromAuth = auth.onAuthStateChanged(user => {
-      this.setState({ currentUser: user})
+      this.setState({ currentUser: user });
 
-      console.log(user)
-    })
+      console.log(user);
+    });
   }
 
-  componentWillUnmount(){
-    this.unsubscribeFromAuth()
+  componentWillUnmount() {
+    this.unsubscribeFromAuth();
   }
 
-
-  render(){
+  render() {
     return (
       <div>
-        <Header />
+        <Header currentUser={this.state.currentUser} />
         <Switch>
           <Route exact path='/' component={HomePage} />
           <Route path='/shop' component={ShopPage} />
@@ -43,9 +42,7 @@ class App extends React.Component {
         </Switch>
       </div>
     );
-
   }
-  
 }
 
 export default App;
