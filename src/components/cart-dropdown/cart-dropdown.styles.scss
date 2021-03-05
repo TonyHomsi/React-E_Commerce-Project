@@ -10,7 +10,10 @@
     top: 90px;
     right: 40px;
     z-index: 5;
-  
+    ::-webkit-scrollbar { 
+      display: none; /* this makes the scroll bar to hide */
+  }
+ 
     .cart-items {
       height: 240px;
       display: flex;
@@ -22,4 +25,3 @@
       margin-top: auto;
     }
   }
-  
