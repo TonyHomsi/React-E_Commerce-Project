@@ -29,8 +29,6 @@ class App extends React.Component {
       } else {
         setCurrentUser(userAuth);
       }
-
-      // console.log(userAuth);
     });
   }
 
@@ -62,7 +60,7 @@ class App extends React.Component {
   }
 }
 const mapStateToProps = ({ user }) => ({
-  currentUser: user.currentUser
+  currentUser: user.currentUser,
 });
 const mapDispatchToProps = (dispatch) => ({
   setCurrentUser: (user) => dispatch(setCurrentUser(user)),
