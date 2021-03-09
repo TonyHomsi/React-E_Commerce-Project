@@ -11,7 +11,7 @@
     right: 40px;
     z-index: 5;
     ::-webkit-scrollbar { 
-      display: none; /* this makes the scroll bar to hide */
+      display: auto; /* this makes the scroll bar to hide */
   }
 
   .empty-message {
