@@ -1,5 +1,4 @@
 import React from "react";
-// import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import {createStructuredSelector} from 'reselect'
 
@@ -10,7 +9,7 @@ import {selectCartHidden} from '../../redux/cart/cart.selectors'
 import {selectCurrentUser} from '../../redux/user/user.selectors'
 
 import { ReactComponent as Logo } from "../../assests/crown.svg";
-import {HeaderContainer, LogoContainer, OptionsContainer, OptionDiv, OptionLink} from './header.styles'
+import {HeaderContainer, LogoContainer, OptionsContainer, OptionLink} from './header.styles'
 
 import "./header.styles.scss";
 
@@ -27,9 +26,9 @@ const Header = ({ currentUser, hidden }) => (
         CONTACT
       </OptionLink>
       {currentUser ? (
-        <OptionDiv onClick={() => auth.signOut()}>
+        <OptionLink as='div' onClick={() => auth.signOut()}>
           SIGN OUT
-        </OptionDiv>
+        </OptionLink>
       ) : (
         <OptionLink className="option" to="/signin">
           SIGN IN
