@@ -6,6 +6,7 @@ const INITIAL_STATE = {
     error: null
 }
 
+
 const userReducer =(state = INITIAL_STATE, action) => {
     switch (action.type) {
         case UserActionType.GOOGLE_SIGN_IN_SUCCESS:
