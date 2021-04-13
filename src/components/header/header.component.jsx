@@ -31,7 +31,7 @@ const Header = ({ currentUser, hidden, signOutStart }) => (
           SIGN OUT
         </OptionLink>
       ) : (
-        <OptionLink className="option" to="/signin">
+        <OptionLink to="/signin">
           SIGN IN
         </OptionLink>
       )}
